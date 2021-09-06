@@ -34,8 +34,16 @@ body {
     background-color: violet;
 }
 
+h1 {
+    padding-left: 100px;
+    
+}
+
+p {
+    font-size: 18px;
+}
 .startBtn {
-    width: 150px;
+    width: 80px;
     height: 30px;
     background-color: purple;
     color: white;
