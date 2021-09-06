@@ -6,30 +6,36 @@ const questionContainer = document.getElementById('question-box')
 const questionElement = document.getElementById('question')
 const answerButtons = document.getElementById ('answerBtn')
 
-let currentQuestionIndex
+let currentQuestion
 
 
 startButton.addEventListener('click', startQuiz)
 
 function startQuiz() {
     console.log('Started')
-    currentQuestionIndex = 0
     startButton.classList.add('hide')
+    currentQuestion = 0
     questionContainer.classList.remove('hide')
-    showQuestion()
+    selectNextQuestion()
 }
 
 //Question buttons
-function question() {
-
-}
-
 function selectNextQuestion() {
-    showQuestion(currentQuestionIndex)
+    showQuestion(currentQuestion)
 }
 
-function showQuestion(question) {
+function showQuestion(questions) {
     questionElement.innerText = question.question
+    question.answers.forEach(answer => {
+        const button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('btn')
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click', selectAnswer)
+        answerButtons.appendChild(button)
+    })
 }
 
 function selectAnswer() {
@@ -38,10 +44,10 @@ function selectAnswer() {
 
 const questions = [
     {
-        question: "Blah blah",
-        answer: [
-            {text: '4', correct: true },
-            {text: '22', correct: false }
+        question: 'Blah blah',
+        answers: [
+            { text: '4', correct: true },
+            { text: '22', correct: false }
         ]
     }
 ]

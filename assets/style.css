@@ -5,9 +5,58 @@
 
 body {
     padding: 0;
+    padding-top: 200px;
+    padding-left: 350px;
     margin: 0;
     display: flex;
+
+}
+
+.container {
+    max-width: 80%;
+    
+}
+
+.answerbuttons {
+    display: grid;
+    gap: 8px;
+}
+
+.button {
+    width: 150px;
+    height: 30px;
+    background-color: purple;
+    color: white;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: violet;
+}
+
+.startBtn {
+    width: 150px;
+    height: 30px;
+    background-color: purple;
+    color: white;
+    border-radius: 5px;
+}
+
+.nextBtn {
+    width: 150px;
+    height: 30px;
+    background-color: purple;
+    color: white;
+    border-radius: 5px;
+}
+
+/*.controls {
+    display: flex;
     justify-content: center;
-    align-items: center;
+    align-items:center;
+} */
+
+.hide {
+    display: none;
 }
 
